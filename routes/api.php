@@ -1,6 +1,7 @@
 <?php
 
-use Illuminate\Http\Request;
+use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\AuthorController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,6 +15,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+Route::prefix('author')->group(function () {
+    Route::get('{authorId}/articles', [AuthorController::class, 'getAllAuthorsArticles']);
+    Route::get('/top3', [AuthorController::class, 'getTopAuthors']);
+});
+
+Route::prefix('article')->group(function () {
+    Route::get('/all', [ArticleController::class, 'index']);
+    Route::get('/{articleId}', [ArticleController::class, 'show']);
+    Route::post('/', [ArticleController::class, 'create']);
+    Route::put('/{article}', [ArticleController::class, 'update']);
 });
