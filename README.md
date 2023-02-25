@@ -19,7 +19,7 @@
 
 ## 3. Run migrations and seed authors table
 ```bash
-    php migrate
+    php artisan migrate
     php artisan db:seed --class=AuthorSeeder
 ```
 ## 4. Run php and vite servers
