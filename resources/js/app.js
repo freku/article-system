@@ -38,6 +38,14 @@ const routes = [
     component: AuthorArticlesView,
     name: "authorArticles",
   },
+  {
+    path: '/:pathMatch(.*)*',
+    name: 'NotFound',
+    component: ArticleView,
+    beforeEnter: (to, from, next) => {
+        next('/')
+    }
+  },
 ];
 
 const router = createRouter({

@@ -1,12 +1,9 @@
 <script setup>
-import { useFetchWithData } from '../composable/fetchWithData';
-import ArticleListWithTopAuthors from '../components/article/ArticleListWithTopAuthors.vue';
+import { useFetchWithData } from "../composable/fetchWithData";
+import ArticleListWithTopAuthors from "../components/article/ArticleListWithTopAuthors.vue";
 
-const {
-    data: articles,
-    fetched: articlesFetched,
-} = useFetchWithData('/api/articles')
-
+const { data: articles, fetched: articlesFetched } =
+  useFetchWithData("/api/articles");
 </script>
 
 <template>
@@ -15,4 +12,3 @@ const {
     :articles-fetched="articlesFetched"
   />
 </template>
-

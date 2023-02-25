@@ -8,13 +8,14 @@ const props = defineProps({
   },
   placeholder: {
     type: String,
-    default: '',
-  }
+    default: "",
+  },
 });
+
 defineEmits(["update:modelValue"]);
 
 const textarea = ref(null);
-const height = ref(null)
+const height = ref(null);
 
 const adjustHeight = () => {
   const textareaEl = textarea.value;
@@ -26,11 +27,14 @@ const adjustHeight = () => {
   }
 };
 
-watch(() => props.modelValue, () => {
-  adjustHeight();
-});
+watch(
+  () => props.modelValue,
+  () => {
+    adjustHeight();
+  }
+);
 
-onMounted(() => adjustHeight())
+onMounted(() => adjustHeight());
 </script>
 
 <template>

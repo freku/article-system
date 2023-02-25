@@ -12,7 +12,7 @@ const props = defineProps({
   },
 });
 
-const emit = defineEmits(['addAuthor', 'removeAuthor'])
+const emit = defineEmits(["addAuthor", "removeAuthor"]);
 
 const showAuthorsSelect = ref(false);
 const selectedAuthors = ref([]);
@@ -21,11 +21,11 @@ const handleAddButtonClick = () => {
   if (showAuthorsSelect.value) {
     const authorsToAdd = toPickAuthors.value.filter((author) =>
       selectedAuthors.value.includes(author.id)
-    )
+    );
 
-    authorsToAdd.forEach(author => emit('addAuthor', author));
+    authorsToAdd.forEach((author) => emit("addAuthor", author));
 
-    showAuthorsSelect.value = false
+    showAuthorsSelect.value = false;
   } else {
     showAuthorsSelect.value = true;
   }
@@ -37,7 +37,6 @@ const toPickAuthors = computed(() => {
       props.authors.findIndex((author) => author.id == allAuthor.id) == -1
   );
 });
-
 </script>
 
 <template>
@@ -47,7 +46,7 @@ const toPickAuthors = computed(() => {
       :disabled="!toPickAuthors.length"
       @click="handleAddButtonClick"
     >
-      {{ showAuthorsSelect ? 'Add' : 'Authors' }}
+      {{ showAuthorsSelect ? "Add" : "Authors" }}
     </button>
     <span
       v-for="author in props.authors"
@@ -91,6 +90,6 @@ const toPickAuthors = computed(() => {
 
 <style>
 .author-item + .author-item::before {
-    content: ", ";
+  content: ", ";
 }
 </style>

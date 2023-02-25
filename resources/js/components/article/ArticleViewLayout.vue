@@ -1,13 +1,13 @@
 <script setup>
-import NavigationBar from '../NavigationBar.vue'
-import LoadingSpinner from '../LoadingSpinner.vue'
+import NavigationBar from "../NavigationBar.vue";
+import LoadingSpinner from "../LoadingSpinner.vue";
 
 const props = defineProps({
-    articleFetched: {
-        type: Boolean,
-        required: true,
-    }
-})
+  articleFetched: {
+    type: Boolean,
+    required: true,
+  },
+});
 </script>
 
 <template>

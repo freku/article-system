@@ -1,10 +1,10 @@
 <script setup>
-    const props = defineProps({
-        classes: {
-            type: String,
-            default: "w-4 h-4"
-        }
-    })
+const props = defineProps({
+  classes: {
+    type: String,
+    default: "w-4 h-4",
+  },
+});
 </script>
 
 <template>

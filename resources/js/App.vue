@@ -1,6 +1,6 @@
 <script setup>
-import SuccessToast from './components/toasts/SuccessToast.vue';
-import DangerToast from './components/toasts/DangerToast.vue';
+import SuccessToast from "./components/toasts/SuccessToast.vue";
+import DangerToast from "./components/toasts/DangerToast.vue";
 </script>
 
 <template>
@@ -14,7 +14,7 @@ import DangerToast from './components/toasts/DangerToast.vue';
 
 <style>
 body {
-    background: #FCFCFC;
-    color: #222222;
+  background: #fcfcfc;
+  color: #222222;
 }
 </style>

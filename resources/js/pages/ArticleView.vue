@@ -1,25 +1,22 @@
 <script setup>
-import { computed } from 'vue'
-import { useRoute, useRouter } from 'vue-router'
-import { useFetchWithData } from '../composable/fetchWithData'
-import ArticlePost from '../components/article/ArticlePost.vue'
-import ArticlePreFetch from '../components/article/ArticleViewLayout.vue';
+import { computed } from "vue";
+import { useRoute, useRouter } from "vue-router";
+import { useFetchWithData } from "../composable/fetchWithData";
+import ArticlePost from "../components/article/ArticlePost.vue";
+import ArticlePreFetch from "../components/article/ArticleViewLayout.vue";
 
-const router = useRouter()
-const route = useRoute()
+const router = useRouter();
+const route = useRoute();
 
 const url = computed(() => {
-    if (route.params.articleId) {
-        return `/api/article/${route.params.articleId}`
-    }
+  if (route.params.articleId) {
+    return `/api/article/${route.params.articleId}`;
+  }
 
-    return null
-})
+  return null;
+});
 
-const {
-    data: article,
-    fetched: articleFetched,
-} = useFetchWithData(url)
+const { data: article, fetched: articleFetched } = useFetchWithData(url);
 
 </script>
 
@@ -35,7 +32,12 @@ const {
     >
       <button
         class="text-green-500 underline"
-        @click="router.push({name: 'editArticle', params: {articleId: article.id}})"
+        @click="
+          router.push({
+            name: 'editArticle',
+            params: { articleId: article.id },
+          })
+        "
       >
         edit
       </button>

@@ -1,36 +1,42 @@
 <script setup>
-import TextareaAutoHeight from '../TextareaAutoHeight.vue';
-import AuthorsPicker from './AuthorsPicker.vue';
+import TextareaAutoHeight from "../TextareaAutoHeight.vue";
+import AuthorsPicker from "./AuthorsPicker.vue";
 
 const props = defineProps({
-    cancelText: {
-        type: String,
-        required: true,
-    },
-    saveText: {
-        type: String,
-        required: true,
-    },
-    article: {
-        type: Object,
-        required: true,
-    },
-    authors: {
-        type: Array,
-        required: true,
-    },
-    title: {
-        type: String,
-        required: true,
-    },
-    content: {
-        type: String,
-        required: true,
-    },
-})
+  cancelText: {
+    type: String,
+    required: true,
+  },
+  saveText: {
+    type: String,
+    required: true,
+  },
+  article: {
+    type: Object,
+    required: true,
+  },
+  authors: {
+    type: Array,
+    required: true,
+  },
+  title: {
+    type: String,
+    required: true,
+  },
+  content: {
+    type: String,
+    required: true,
+  },
+});
 
-const emit = defineEmits(['save', 'cancel', 'removeAuthor', 'addAuthor', 'update:title', 'update:content'])
-
+const emit = defineEmits([
+  "save",
+  "cancel",
+  "removeAuthor",
+  "addAuthor",
+  "update:title",
+  "update:content",
+]);
 </script>
 
 <template>

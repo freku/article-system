@@ -1,4 +1,4 @@
-import { ref, isRef, unref, watchEffect } from 'vue'
+import { ref, isRef, unref, watchEffect } from "vue";
 import axios from "axios";
 
 export function useFetchWithData(url) {
@@ -20,9 +20,9 @@ export function useFetchWithData(url) {
   }
 
   if (isRef(url)) {
-    watchEffect(fetchData)
+    watchEffect(fetchData);
   } else {
-    fetchData()
+    fetchData();
   }
 
   return {
