@@ -54,7 +54,10 @@ const props = defineProps({
         {{ content }}
       </p>
     </div>
-    <div class="px-6 py-2 h-10 flex justify-between">
+    <div
+      class="px-6 py-2 flex justify-between"
+      :class="{ 'h-10': clipContent }"
+    >
       <p class="text-xs">
         Authors:
         <router-link
