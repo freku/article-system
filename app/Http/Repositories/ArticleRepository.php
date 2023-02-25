@@ -33,6 +33,7 @@ class ArticleRepository implements IArticleRepository
     public function getAll(): Collection
     {
         return $this->model
-            ->all();
+            ->with('authors')
+            ->get();
     }
 }

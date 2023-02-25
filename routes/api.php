@@ -16,13 +16,16 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::prefix('author')->group(function () {
-    Route::get('{authorId}/articles', [AuthorController::class, 'getAllAuthorsArticles']);
+    Route::get('/{authorId}/articles', [AuthorController::class, 'getAllAuthorsArticles']);
     Route::get('/top3', [AuthorController::class, 'getTopAuthors']);
 });
 
+Route::get('authors', [AuthorController::class, 'index']);
+
 Route::prefix('article')->group(function () {
-    Route::get('/all', [ArticleController::class, 'index']);
     Route::get('/{articleId}', [ArticleController::class, 'show']);
     Route::post('/', [ArticleController::class, 'create']);
     Route::put('/{article}', [ArticleController::class, 'update']);
 });
+
+Route::get('/articles', [ArticleController::class, 'index']);

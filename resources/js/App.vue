@@ -1,8 +1,20 @@
 <script setup>
-    import { reactive, ref, computed, watch, watchEffect } from 'vue';
+import SuccessToast from './components/toasts/SuccessToast.vue';
+import DangerToast from './components/toasts/DangerToast.vue';
 </script>
 
 <template>
-    <h1> Hello, Vuejs with Laravel </h1>
+  <div>
+    <SuccessToast />
+    <DangerToast />
+
+    <router-view />
+  </div>
 </template>
 
+<style>
+body {
+    background: #FCFCFC;
+    color: #222222;
+}
+</style>

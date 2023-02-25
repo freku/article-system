@@ -15,6 +15,13 @@ class AuthorController extends BaseController
     ) {
     }
 
+    public function index(): JsonResponse
+    {
+        return response()->json([
+            'data' => $this->authorRepository->getAll(),
+        ]);
+    }
+
     public function getAllAuthorsArticles(int $authorId): JsonResponse
     {
         return response()->json([

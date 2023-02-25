@@ -24,7 +24,7 @@ class ArticleRequest extends FormRequest
         return [
             'title' => ['required', 'max:256'],
             'content' => ['required', 'max:2048'],
-            'authors' => ['array'],
+            'authors' => ['required', 'array'],
             'authors.*' => ['exists:authors,id', 'integer'],
         ];
     }

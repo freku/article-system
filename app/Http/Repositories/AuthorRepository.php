@@ -13,10 +13,15 @@ class AuthorRepository implements IAuthorRepository
     {
     }
 
+    public function getAll(): Collection
+    {
+        return $this->model
+            ->get();
+    }
+
     public function getTopAuthorsThatWroteTheMostInTheLastWeek(int $limit): Collection
     {
         return $this->model
-            ->with('articles')
             ->withCount(['articles' => function ($query) {
                 $query->whereBetween('articles.created_at', [Carbon::now()->subWeek(), Carbon::now()]);
             }])
