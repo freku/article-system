@@ -22,7 +22,7 @@
     php migrate
     php artisan db:seed --class=AuthorSeeder
 ```
-## 2. Run php and vite servers
+## 4. Run php and vite servers
 
 ```bash
     php artisan serve --post=8000
