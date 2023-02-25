@@ -14,8 +14,8 @@ export function useFetchWithData(url) {
 
       fetched.value = true;
       data.value = result.data.data;
-    } catch (errors) {
-      errors.value = errors;
+    } catch (err) {
+      errors.value = err;
     }
   }
 

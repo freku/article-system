@@ -11,7 +11,7 @@ const { text, visible } = successToast
   <div
     v-if="visible"
     id="toast-success"
-    class="flex items-center w-full max-w-xs p-4 mb-4 text-gray-500 bg-white rounded-lg shadow absolute bottom-5 right-5"
+    class="z-10 flex items-center w-full max-w-xs p-4 mb-4 text-gray-500 bg-white rounded-lg shadow fixed bottom-5 right-5"
     role="alert"
   >
     <div class="inline-flex items-center justify-center flex-shrink-0 w-8 h-8 text-green-500 bg-green-100 rounded-lg">

@@ -29,8 +29,16 @@ class ArticleController extends BaseController
 
     public function show(int $articleId): JsonResponse
     {
+        $article = $this->articleRepository->getArticleById($articleId);
+
+        if (!$article) {
+            return response()->json([
+                'error' => 'Article with that id does not exist.'
+            ], Response::HTTP_NOT_FOUND);
+        }
+
         return response()->json([
-            'data' => $this->articleRepository->getArticleById($articleId),
+            'data' => $article,
         ]);
     }
 

@@ -1,7 +1,8 @@
 <script setup>
-import { computed } from "vue";
+import { computed, watch } from "vue";
 import { useRoute, useRouter } from "vue-router";
 import { useFetchWithData } from "../composable/fetchWithData";
+import { useToast } from "../composable/toastState";
 import ArticlePost from "../components/article/ArticlePost.vue";
 import ArticlePreFetch from "../components/article/ArticleViewLayout.vue";
 
@@ -16,8 +17,23 @@ const url = computed(() => {
   return null;
 });
 
-const { data: article, fetched: articleFetched } = useFetchWithData(url);
+const {
+  data: article,
+  fetched: articleFetched,
+  errors,
+} = useFetchWithData(url);
 
+watch(
+  () => errors,
+  () => {
+    const { dangerToast } = useToast();
+
+    router.push({ name: "home" });
+
+    dangerToast.show("Article with that id doesn't exist.");
+  },
+  { deep: true }
+);
 </script>
 
 <template>
