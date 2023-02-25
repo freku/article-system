@@ -25,7 +25,7 @@
 ## 4. Run php and vite servers
 
 ```bash
-    php artisan serve --post=8000
+    php artisan serve --port=8000
     npm run dev
 ```
 ---
